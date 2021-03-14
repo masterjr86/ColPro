@@ -39,17 +39,17 @@ while True:
                 vacancy_currency = None
 
             if re.match(r'от', vacancy_salary):
-                salary_min = re.sub('\D', '', vacancy_salary)
+                salary_min = int(re.sub('\D', '', vacancy_salary))
                 salary_max = None
             elif re.match(r'до', vacancy_salary):
-                salary_max = re.sub('\D', '', vacancy_salary)
+                salary_max = int(re.sub('\D', '', vacancy_salary))
                 salary_min = None
             elif vacancy_salary == '':
                 salary_min = None
                 salary_max = None
             else:
-                salary_min = re.sub(r'\D', '',re.split(r'-', vacancy_salary)[0])
-                salary_max = re.sub(r'\D', '', re.split(r'-', vacancy_salary)[1])
+                salary_min = int(re.sub(r'\D', '',re.split(r'-', vacancy_salary)[0]))
+                salary_max = int(re.sub(r'\D', '', re.split(r'-', vacancy_salary)[1]))
 
             vacancy_link = re.sub(r'https://sergievposad.hh.ru', link, vacancy.find('a', href=True)['href'])
 

@@ -32,10 +32,16 @@ for itm in range(0, len(items) -1):
     dates = dom.xpath("//div[@class='item']/a/time//@title")
     lenta_news_data['date'] = dates[itm]
 
+    lenta_news_data['url'] = main_url
+
     lenta_main_news.append(lenta_news_data)
 
 
-pprint(lenta_main_news)
+
+
+
+
+
 
 from pymongo import MongoClient
 client = MongoClient('localhost', 27017)

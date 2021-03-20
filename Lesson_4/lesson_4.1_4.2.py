@@ -68,5 +68,6 @@ for itm in range(0, len(mailru_items) - 1):
     mailru_main_news.append(mailru_news_data)
 
 
+
 mailru_news = db.mailru_news
 db.mailru_news.insert_many(mailru_main_news)
